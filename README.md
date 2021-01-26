@@ -1,4 +1,4 @@
-# pouch-hyperbee
+# pouchdb-adapter-hyperbee
 
 Adapter for PouchDB to load p2p data from Hyperbee
 
