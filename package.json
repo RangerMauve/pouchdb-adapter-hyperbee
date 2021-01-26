@@ -1,28 +1,26 @@
 {
-  "name": "pouch-hyperbee",
+  "name": "pouchdb-adapter-hyperbee",
   "version": "1.0.0",
-  "description": "Testing out PouchDB with hyperbee for p2p database loading",
+  "description": "PouchDB adapter for p2p data with hyperbee",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RangerMauve/pouch-hyperbee.git"
+    "url": "git+https://github.com/RangerMauve/pouchdb-adapter-hyperbee.git"
   },
   "author": "rangermauve <ranger@mauve.moe> (https://mauve.moe/)",
   "license": "AGPL-3.0",
   "bugs": {
-    "url": "https://github.com/RangerMauve/pouch-hyperbee/issues"
+    "url": "https://github.com/RangerMauve/pouchdb-adapter-hyperbee/issues"
   },
-  "homepage": "https://github.com/RangerMauve/pouch-hyperbee#readme",
+  "homepage": "https://github.com/RangerMauve/pouchdb-adapter-hyperbee#readme",
   "dependencies": {
-    "hyper-sdk": "^3.0.3",
-    "hyperbee": "^1.1.2",
-    "hyperbeedown": "^2.0.1",
-    "pouchdb": "^7.2.2",
-    "pouchdb-adapter-leveldb-browser": "^7.0.0-prerelease",
-    "pouchdb-adapter-leveldb-core": "^7.2.2",
-    "pouchdb-find": "^7.2.2"
+    "networked-hyperbeedown": "^1.0.0",
+    "pouchdb-adapter-leveldb-core": "^7.2.2"
+  },
+  "devDependencies": {
+    "pouchdb": "^7.2.2"
   }
 }

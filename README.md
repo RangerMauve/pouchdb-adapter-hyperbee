@@ -1,13 +1,11 @@
 # pouch-hyperbee
 
-Testing out PouchDB with hyperbee for p2p database loading
-
-**Warning: Still in WIP status**
+Adapter for PouchDB to load p2p data from Hyperbee
 
 ## Example
 
 ```JavaScript
-PouchDB.plugin(require('poouchdb-hyperbee'))
+PouchDB.plugin(require('poouchdb-adapter-hyperbee')())
 
 // You can pass any valid `hyper://` URL
 // URLs with a `name` in them will generate a local hyperbee

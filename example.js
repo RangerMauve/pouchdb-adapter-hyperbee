@@ -16,8 +16,6 @@ async function run () {
     const url = await pouch.getURL()
 
     console.log({url})
-
-    console.log(pouch)
   } catch (e) {
     console.error(e.stack)
   } finally {

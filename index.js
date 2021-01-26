@@ -1,8 +1,9 @@
 // Loosely based on pouchdb-adapter-memory
 const CoreLevelPouch = require('pouchdb-adapter-leveldb-core')
+const makeNetworkedHyperbeedown = require('networked-hyperbeedown')
 
 module.exports = function makeHyperbeePouchPlugin (opts) {
-  const NetworkedHyperbeedown = require('./networked-hyperbeedown')(opts)
+  const NetworkedHyperbeedown = makeNetworkedHyperbeedown(opts)
 
   function HyperbeePouch (opts, callback) {
     const db = (url) => {
