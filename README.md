@@ -15,4 +15,7 @@ const pouch = new PouchDB('hyper://example', {
 })
 
 const url = await pouch.getURL()
+
+// In case you want to access the hyperbee instance directly
+const bee = pouch.bee
 ```

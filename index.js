@@ -18,6 +18,10 @@ module.exports = function makeHyperbeePouchPlugin (opts) {
       ...opts
     }
     CoreLevelPouch.call(this, _opts, callback)
+
+    Object.defineProperty(this, 'bee', {
+      get: () => this.__db.tree
+    })
   }
 
   HyperbeePouch.valid = () => true
