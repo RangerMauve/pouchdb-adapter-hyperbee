@@ -7,9 +7,16 @@ module.exports = function makeHyperbeePouchPlugin (opts) {
 
   function HyperbeePouch (opts, callback) {
     const db = (url) => {
-      const _db = new NetworkedHyperbeedown(url)
-      if(this.__db) throw new Error('Something went wrong, the hyperbee adapter only supports loading a single instance at a time')
+      const _db = new NetworkedHyperbeedown(url, {
+        // Seems like pouch uses these encodings to work
+        keyEncoding: 'utf-8',
+        valueEncoding: 'binary'
+      })
+      if (this.__db) throw new Error('Something went wrong, the hyperbee adapter only supports loading a single instance at a time')
       this.__db = _db
+      _db.open((err) => {
+        this.emit(err ? 'error' : 'open', err)
+      })
       return _db
     }
 

@@ -14,8 +14,11 @@ const pouch = new PouchDB('hyper://example', {
   adapter: 'hyperbee'
 })
 
-const url = await pouch.getURL()
+// Wait for the DB to open if you want to access the bee directly
+pouch.once('open', () => {
+  const url = await pouch.getURL()
 
-// In case you want to access the hyperbee instance directly
-const bee = pouch.bee
+  // In case you want to access the hyperbee instance directly
+  const bee = pouch.bee
+})
 ```
