@@ -1,6 +1,6 @@
 {
   "name": "pouchdb-adapter-hyperbee",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "PouchDB adapter for p2p data with hyperbee",
   "main": "index.js",
   "scripts": {
