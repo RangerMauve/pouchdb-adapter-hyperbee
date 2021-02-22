@@ -1,5 +1,5 @@
 // Loosely based on pouchdb-adapter-memory
-const CoreLevelPouch = require('pouchdb-adapter-leveldb-core')
+const CoreLevelPouch = orDefault(require('pouchdb-adapter-leveldb-core'))
 const makeNetworkedHyperbeedown = require('networked-hyperbeedown')
 
 module.exports = function makeHyperbeePouchPlugin (opts) {
@@ -52,4 +52,11 @@ module.exports = function makeHyperbeePouchPlugin (opts) {
   attachHyperbeePouch.close = (...opts) => NetworkedHyperbeedown.close(...opts)
 
   return attachHyperbeePouch
+}
+
+// This is necessary to account for Webpack environments
+// Pouch exports ESM when possible, and Webpack doesn't normalize it back
+function orDefault(module) {
+  if (module.default) return module.default;
+  return module;
 }
